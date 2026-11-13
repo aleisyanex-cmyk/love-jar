@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7dce4">
+<title>A Little Jar of Love ♡</title>
+<style>
+:root{--pink:#e8a9bd;--deep:#a95776;--pale:#fff4f6;--cream:#fffaf7;--ink:#684653;--rose:#f3cbd7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top,#fff8fa 0,#fceaf0 42%,#f8dfe8 100%);color:var(--ink);font-family:Georgia,'Times New Roman',serif;min-height:100vh}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:980px;margin:auto;padding:28px 18px 55px}
+header{text-align:center;padding:22px 10px 18px}
+.eyebrow{font:700 11px/1.4 Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#b56b84}
+h1{font-size:clamp(36px,7vw,62px);font-weight:normal;margin:10px 0 8px;color:#9e536f}
+.subtitle{font-size:16px;line-height:1.7;color:#956a79;margin:0 auto;max-width:520px}
+.pill{display:inline-block;margin-top:15px;border:1px solid #edc5d2;border-radius:999px;padding:7px 14px;font:12px Arial,sans-serif;color:#a45f78;background:#fff8fa}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:14px 0 26px}
+nav button,.soft-btn{border:1px solid #e9bfcd;background:#fff9fa;color:#9c5872;border-radius:999px;padding:10px 15px;font:13px Arial,sans-serif;transition:.2s}
+nav button.active,nav button:hover,.soft-btn:hover{background:#b96f89;color:white;border-color:#b96f89}
+.panel{background:rgba(255,250,249,.88);border:1px solid #f0d2dc;border-radius:25px;padding:clamp(18px,4vw,32px);box-shadow:0 12px 35px rgba(151,83,108,.09);margin-bottom:20px}
+.jar-area{text-align:center;padding:10px 0 5px}
+.jar{width:170px;height:195px;margin:12px auto 18px;position:relative;border:4px solid rgba(190,116,145,.65);border-radius:27px 27px 42px 42px;background:linear-gradient(110deg,rgba(255,255,255,.9),rgba(248,206,220,.55),rgba(255,255,255,.85));box-shadow:inset -13px 0 22px rgba(201,127,157,.12),0 12px 20px rgba(160,89,118,.12);display:grid;place-items:center;cursor:pointer;transition:transform .25s}
+.jar:before{content:"";position:absolute;top:-17px;left:20px;width:122px;height:18px;border:4px solid rgba(190,116,145,.65);border-radius:8px;background:#f6d9e2}
+.jar:after{content:"";position:absolute;top:8px;left:12px;width:12px;height:145px;border-radius:20px;background:rgba(255,255,255,.55)}
+.jar:hover{transform:translateY(-5px) rotate(-2deg)}
+.jar-heart{font-size:68px;filter:drop-shadow(0 5px 5px rgba(169,87,118,.15))}
+.jar-label{position:absolute;bottom:22px;background:#fff7f8;border:1px solid #edc4d2;border-radius:14px;padding:6px 12px;font:11px Arial,sans-serif;letter-spacing:1px;color:#a65d78}
+.hint{font:13px Arial,sans-serif;color:#a87989}
+.note{max-width:580px;min-height:120px;margin:18px auto 8px;padding:22px;border-radius:20px;background:#fff;border:1px dashed #dfaabc;display:none;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 8px 20px rgba(155,83,111,.08)}
+.note.show{display:flex;animation:pop .35s ease}
+.note p{font-size:21px;line-height:1.55;margin:8px 0;color:#89536a}
+.note small{font:11px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#b16b84}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+.actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.section-title{text-align:center;font-size:27px;font-weight:normal;color:#a45a75;margin:0 0 8px}
+.section-desc{text-align:center;font:13px/1.7 Arial,sans-serif;color:#9b7481;margin:0 auto 20px;max-width:540px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.category{border:1px solid #efd0da;background:#fff9fa;border-radius:18px;padding:18px;text-align:left;color:var(--ink);transition:.2s}
+.category:hover{transform:translateY(-3px);box-shadow:0 8px 18px #eacbd5}
+.category .emoji{font-size:25px}
+.category h3{font-weight:normal;color:#a45a75;margin:9px 0 5px;font-size:19px}
+.category p{font:12px/1.5 Arial,sans-serif;color:#9b7481;margin:0}
+.content-box{background:#fff;border-radius:18px;border:1px solid #f0d5de;padding:22px;text-align:center;line-height:1.8}
+.content-box p{margin:8px 0}
+.verse{font-size:20px;color:#8f526b}
+.reference{font:12px Arial,sans-serif;color:#ae7187;letter-spacing:1px}
+.letter{text-align:left;max-width:650px;margin:auto;line-height:1.9;font-size:17px}
+.letter .sign{color:#a45a75;font-style:italic;text-align:right;margin-top:22px}
+footer{text-align:center;color:#a87889;font:12px/1.7 Arial,sans-serif;padding:12px}
+.hidden{display:none!important}
+@media(max-width:520px){.wrap{padding:18px 13px 38px}.panel{border-radius:20px}.jar{transform:scale(.92);margin-top:3px;margin-bottom:8px}.jar:hover{transform:scale(.92)}nav button{padding:9px 11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">a little something, from me to you</div>
+  <h1>A Little Jar of Love <span aria-hidden="true">♡</span></h1>
+  <div class="pill">for yam</div>
+  <p class="subtitle">For the days we're far apart, and for every little moment you need a reminder that someone is always cheering for you.</p>
+  <div class="pill">made with love, just for you · always</div>
+</header>
+
+<nav aria-label="Website sections">
+  <button class="active" data-page="home">♡ the jar</button>
+  <button data-page="openwhen">open when...</button>
+  <button data-page="verses">verses & reminders</button>
+  <button data-page="letter">a little letter</button>
+</nav>
+
+<main>
+<section id="home" class="page">
+  <div class="panel jar-area">
+    <h2 class="section-title">pick a little note</h2>
+    <p class="section-desc">Tap the jar whenever you want. Every click brings you a different reason why you're loved.</p>
+    <div class="jar" id="jar" role="button" tabindex="0" aria-label="Open a random love note">
+      <div class="jar-heart">♡</div><div class="jar-label">100 little reasons</div>
+    </div>
+    <div class="hint">tap the jar to open a note</div>
+    <div class="note" id="reasonNote" aria-live="polite">
+      <small id="reasonNumber">a little reminder</small>
+      <p id="reasonText"></p>
+      <div class="actions"><button class="soft-btn" id="another">another note ♡</button><button class="soft-btn" id="copyReason">copy note</button></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h2 class="section-title">little things for you</h2>
+    <p class="section-desc">Choose a tiny corner of this website depending on what your heart needs today.</p>
+    <div class="grid">
+      <button class="category" data-goto="openwhen"><span class="emoji">💌</span><h3>open when...</h3><p>For the days you miss me or need comfort.</p></button>
+      <button class="category" data-goto="verses"><span class="emoji">🌷</span><h3>faith & reminders</h3><p>Gentle words to keep close to your heart.</p></button>
+      <button class="category" data-goto="letter"><span class="emoji">♡</span><h3>one little letter</h3><p>A message to read whenever you need it.</p></button>
+    </div>
+  </div>
+</section>
+
+<section id="openwhen" class="page hidden">
+  <div class="panel">
+    <h2 class="section-title">open when... ♡</h2>
+    <p class="section-desc">Choose the note that feels right for this moment.</p>
+    <div class="grid" id="whenGrid">
+      <button class="category" data-kind="miss"><span class="emoji">🥺</span><h3>you miss me</h3><p>A little reminder that distance doesn't erase care.</p></button>
+      <button class="category" data-kind="sad"><span class="emoji">🌧️</span><h3>you're having a hard day</h3><p>Take a breath. You don't have to figure everything out at once.</p></button>
+      <button class="category" data-kind="tired"><span class="emoji">☁️</span><h3>you're tired</h3><p>A reminder to rest and be gentle with yourself.</p></button>
+      <button class="category" data-kind="doubt"><span class="emoji">💗</span><h3>you need reassurance</h3><p>Read this when you need a little certainty.</p></button>
+      <button class="category" data-kind="happy"><span class="emoji">🌼</span><h3>you're happy</h3><p>I hope you let yourself enjoy every bit of it.</p></button>
+      <button class="category" data-kind="sleep"><span class="emoji">🌙</span><h3>before you sleep</h3><p>End your day with a soft thought.</p></button>
+    </div>
+    <div class="note" id="whenNote" aria-live="polite"><small id="whenTitle"></small><p id="whenText"></p><button class="soft-btn" id="closeWhen">close note</button></div>
+  </div>
+</section>
+
+<section id="verses" class="page hidden">
+  <div class="panel">
+    <h2 class="section-title">verses & little reminders</h2>
+    <p class="section-desc">A few words of faith, hope, and encouragement for you.</p>
+    <div class="content-box">
+      <p class="verse">“Be still, and know that I am God.”</p><p class="reference">PSALM 46:10 · KJV</p>
+      <hr style="border:0;border-top:1px solid #f1dce3;margin:20px 0">
+      <p class="verse">“I can do all things through Christ which strengtheneth me.”</p><p class="reference">PHILIPPIANS 4:13 · KJV</p>
+      <hr style="border:0;border-top:1px solid #f1dce3;margin:20px 0">
+      <p class="verse">“The Lord is my shepherd; I shall not want.”</p><p class="reference">PSALM 23:1 · KJV</p>
+      <hr style="border:0;border-top:1px solid #f1dce3;margin:20px 0">
+      <p class="verse">“Let all your things be done with charity.”</p><p class="reference">1 CORINTHIANS 16:14 · KJV</p>
+    </div>
+    <div class="content-box" style="margin-top:14px">
+      <p><strong>little reminders for you</strong></p>
+      <p>you are allowed to take things one day at a time.</p>
+      <p>rest is not something you have to earn.</p>
+      <p>you are growing, even on the days you don't notice it.</p>
+      <p>God's love for you is bigger than any difficult day.</p>
+      <p>and no matter the distance, i'm always wishing good things for you.</p>
+    </div>
+  </div>
+</section>
+
+<section id="letter" class="page hidden">
+  <div class="panel">
+    <h2 class="section-title">a little letter for you ♡</h2>
+    <p class="section-desc">Read this whenever you need a reminder of how much you mean to me.</p>
+    <div class="content-box letter">
+      <p>hi, my baby,</p>
+      <p>i made this little corner of the internet just for you. i know we can't always be beside each other, and there will be days when the distance feels a little too much. but i hope this reminds you that even from far away, i'm here, cheering for you and wishing you the best.</p>
+      <p>please don't forget to take care of yourself. eat when you can, get enough rest, and don't be too hard on yourself. you don't have to be happy all the time, and you don't have to handle every difficult day perfectly.</p>
+      <p>thank you for being you. i hope you find a reason to smile whenever you visit this little jar. if i could send you one thing through this screen, it would be a reminder that you are appreciated, important, and deeply cared for.</p>
+      <p>until the day distance is no longer between us, here's a little piece of my heart. ♡</p>
+      <p class="sign">always cheering for you,<br>from ur lover, mey. ♡</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer>made with a little love and a lot of thought ♡<br><span>distance means miles between us, not a lack of care.</span></footer>
+</div>
+<script>
+const reasons = [
+"because you make ordinary days feel a little more special.",
+"because just being yourself is one of my favorite things.",
+"because your smile can make a difficult day feel lighter.",
+"because i love the way you express yourself.",
+"because you have your own little way of making me happy.",
+"because talking to you is something i look forward to.",
+"because you remind me that love can be gentle.",
+"because you make me appreciate the little things.",
+"because i admire the person you are becoming.",
+"because you deserve to be celebrated, even on ordinary days.",
+"because your happiness matters to me.",
+"because i love hearing about your day.",
+"because you make distance feel a little less heavy.",
+"because you are worth the time and effort.",
+"because you have a heart that deserves kindness.",
+"because you make me want to become a better person.",
+"because i can be myself when i talk to you.",
+"because your little stories matter to me.",
+"because i love learning new things about you.",
+"because you make me smile without even trying.",
+"because you are more than enough as you are.",
+"because i admire your strength, even when you don't see it.",
+"because your dreams deserve support.",
+"because i want to celebrate your small wins with you.",
+"because i care about the things that matter to you.",
+"because you make conversations feel meaningful.",
+"because you bring warmth into my days.",
+"because i love your sense of humor.",
+"because you are someone i am grateful to know.",
+"because you deserve patience and understanding.",
+"because you make me excited for our next conversation.",
+"because i love the way you see the world.",
+"because you remind me to notice beautiful little moments.",
+"because i want to hear about both your good and difficult days.",
+"because you don't need to pretend to be okay around me.",
+"because your feelings deserve to be heard.",
+"because i appreciate the effort you give.",
+"because you make me believe in thoughtful love.",
+"because i love sharing little memories with you.",
+"because you are special in ways words can't fully explain.",
+"because i am proud of you for continuing to grow.",
+"because you deserve peaceful mornings and restful nights.",
+"because your voice is familiar comfort to me.",
+"because i like discovering your favorite things.",
+"because you make even a simple good morning feel sweet.",
+"because i want to be someone who supports your goals.",
+"because i appreciate your honesty.",
+"because you deserve a love that feels safe and respectful.",
+"because i love how every day gives me another reason to know you.",
+"because you are a blessing in my life.",
+"because your kindness makes a difference.",
+"because i want to make more memories with you.",
+"because i love your little habits and unique ways.",
+"because you inspire me to keep trying.",
+"because you deserve to be listened to.",
+"because i care about your peace of mind.",
+"because you make me look forward to the future.",
+"because you are allowed to have imperfect days.",
+"because i love seeing you excited about something.",
+"because you deserve encouragement, not pressure.",
+"because i am thankful for the time we share.",
+"because you make me feel lucky to know you.",
+"because i want to remind you of your worth.",
+"because you are growing at your own pace.",
+"because you deserve to feel appreciated.",
+"because your dreams are worth believing in.",
+"because i love the little details that make you you.",
+"because you make my world feel softer.",
+"because i want to keep learning how to love you well.",
+"because you deserve gentleness, especially from yourself.",
+"because i am happy to cheer you on from wherever i am.",
+"because you make our little moments count.",
+"because i love how you can make me laugh.",
+"because you are someone i choose to appreciate.",
+"because i want to know the things that make your heart happy.",
+"because you deserve consistency and care.",
+"because your presence matters, even through a screen.",
+"because i believe good things are waiting for you.",
+"because i want to remind you that you are not alone.",
+"because you make me grateful for this connection.",
+"because you deserve to be loved without having to earn it.",
+"because i admire your courage to keep going.",
+"because i love hearing your thoughts.",
+"because you are important beyond what you achieve.",
+"because i want to share more sunsets and ordinary days with you.",
+"because you deserve people who celebrate you.",
+"because you make me smile at random moments.",
+"because i am thankful for every little update from you.",
+"because you have so much good ahead of you.",
+"because i want to keep making you feel appreciated.",
+"because you deserve time to rest and enjoy life.",
+"because i love the person you are, not just what you do.",
+"because you make this distance worth working through.",
+"because i am grateful for your place in my life.",
+"because there is always something new to appreciate about you.",
+"because you deserve all the kindness you give to others.",
+"because you are you, and that is already a beautiful reason.",
+"because even from far away, you are someone i hold dear.",
+"because choosing to care for you is something i do gladly.",
+"because i hope you never forget how loved and valued you are."
+];
+const whenNotes = {
+miss:["i miss you too, in all the little moments. even with miles between us, i hope you can feel how much i care. until we can see each other, let's keep collecting stories to tell each other. ♡","close your eyes for a second and remember: we're under the same sky. distance can make things harder, but it doesn't make you any less important to me."],
+sad:["it's okay if today isn't your day. you don't have to force a smile or explain every feeling perfectly. take things slowly, breathe, and give yourself the kindness you would give someone you love. i'm cheering for you." ,"you are not a problem to be fixed. you're a person who deserves patience, care, and room to feel. one difficult day does not define your whole story."],
+tired:["please give yourself permission to rest. you don't have to finish everything today to be worthy of a break. drink some water, get comfortable, and take one thing at a time. ♡","you've done what you can for now. let tomorrow have its turn. i hope tonight brings you a little peace."],
+doubt:["you don't have to be perfect to be appreciated. your feelings matter, your voice matters, and you deserve care that is shown through patience, honesty, and actions. please don't measure your worth by one difficult moment.","i care about you as a whole person, not only on your happiest or easiest days. you deserve kindness and reassurance, too."],
+happy:["i hope you let yourself enjoy this moment fully. you deserve good days, loud laughter, and little reasons to celebrate. tell me all about it when you can! ♡","if something made you happy today, keep a little piece of that feeling. i'm glad the world gave you a reason to smile."],
+sleep:["you made it through another day. let the worries wait for tomorrow, and allow yourself to rest. i hope you sleep peacefully and wake up feeling a little lighter. good night, my favorite person. ♡","before you sleep, remember that you are appreciated, you are learning, and you are allowed to begin again tomorrow. sweet dreams."]
+};
+let lastReason=-1;
+function showReason(){
+ let n; do{n=Math.floor(Math.random()*reasons.length)}while(n===lastReason);
+ lastReason=n;document.getElementById('reasonNumber').textContent=`reason ${n+1} of 100`;
+ document.getElementById('reasonText').textContent=reasons[n];
+ document.getElementById('reasonNote').classList.add('show');
+}
+document.getElementById('jar').addEventListener('click',showReason);
+document.getElementById('jar').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showReason()}});
+document.getElementById('another').addEventListener('click',showReason);
+document.getElementById('copyReason').addEventListener('click',async()=>{
+ const t=document.getElementById('reasonText').textContent;
+ try{await navigator.clipboard.writeText(t);document.getElementById('copyReason').textContent='copied ♡';setTimeout(()=>document.getElementById('copyReason').textContent='copy note',1400)}
+ catch(e){document.getElementById('copyReason').textContent='select and copy the note'}
+});
+function go(page){
+ document.querySelectorAll('.page').forEach(p=>p.classList.toggle('hidden',p.id!==page));
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goto)));
+document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{
+ const kind=b.dataset.kind, arr=whenNotes[kind], msg=arr[Math.floor(Math.random()*arr.length)];
+ document.getElementById('whenTitle').textContent=b.querySelector('h3').textContent;
+ document.getElementById('whenText').textContent=msg;
+ document.getElementById('whenNote').classList.add('show');
+ document.getElementById('whenNote').scrollIntoView({behavior:'smooth',block:'center'});
+}));
+document.getElementById('closeWhen').addEventListener('click',()=>document.getElementById('whenNote').classList.remove('show'));
+</script>
+</body>
+</html>
